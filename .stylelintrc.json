@@ -1,0 +1,12 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-alphabetical-order": true,
+    "selector-class-pattern": ".*",
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "font-family-no-missing-generic-family-keyword": null,
+    "scss/at-import-partial-extension": null
+  }
+}

@@ -1,0 +1,12 @@
+<div class="Dashboard">
+  <div class="DashboardHeader">
+    <h1 class="DashboardTitle">Dashboard</h1>
+  </div>
+  <div class="DashboardMenu">
+    <div *ngFor="let item of menu" class="DashboardMenuItem" (click)="addProductToOrder(item.id)">
+      <img class="DashboardMenuItemImage" [src]="categoriesMap[item.name].image" />
+      <div class="DashboardMenuItemTitle">{{ item.name }}</div>
+      <div class="DashboardMenuItemSize">{{ item.size }}{{ categoriesMap[item.name].measure }}</div>
+    </div>
+  </div>
+</div>

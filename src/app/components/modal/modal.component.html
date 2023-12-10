@@ -1,0 +1,10 @@
+<div class="Modal">
+  <div class="ModalOverlay"></div>
+  <div class="ModalWindow">
+    <div class="ModalHeader">
+      <h2 class="ModalTitle">{{ headTitle }}</h2>
+      <div class="ModalClose" (click)="close($event)">&#10005;</div>
+    </div>
+    <div class="ModalContent"><ng-content></ng-content></div>
+  </div>
+</div>

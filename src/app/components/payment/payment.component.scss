@@ -1,0 +1,22 @@
+@import '@/assets/scss/variables.scss';
+
+.Payment {
+  &Tabs {
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 30px;
+
+    &Item {
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      flex: 1;
+      padding: 10px 0;
+      -webkit-tap-highlight-color: transparent;
+      text-align: center;
+
+      &.--active {
+        border-bottom-color: #fe6c6d;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '@/assets/scss/variables.scss';
+
+.Staff {
+  &Header {
+    align-items: flex-start;
+    display: flex;
+  }
+
+  &Title {
+    flex: 1;
+  }
+  
+  &Table {
+    border: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+
+    th {
+      text-transform: uppercase;
+    }
+
+    th, td {
+      border-bottom: 1px solid rgba(#fe6c6d, 0.1);
+      padding: 10px 15px;
+      text-align: left;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &Delete {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="Notifications">
+  <div
+    *ngFor="let notification of notifications"
+    class="NotificationsItem"
+    [ngClass]="'NotificationsItem_' + notification.type"
+  >
+    <span class="NotificationsItemImage" [ngClass]="'NotificationsItemImage_' + notification.type">
+      <app-icon class="NotificationsItemImageIcon" [name]="getIconName(notification.type)" />
+    </span>
+    <div class="NotificationsItemData">
+      <div class="NotificationsItemTitle">{{ notification.title }}</div>
+      <div *ngIf="notification.text" class="NotificationsItemText">{{ notification.text }}</div>
+    </div>
+    <span class="NotificationsItemClose" (click)="closeNotification(notification.id!)">
+      <app-icon class="NotificationsItemCloseIcon" name="close" />
+    </span>
+  </div>
+</div>

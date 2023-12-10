@@ -1,0 +1,13 @@
+<aside class="Sidebar">
+  <nav class="SidebarNav">
+    <a
+      *ngFor="let item of menu"
+      class="SidebarNavItem"
+      [routerLink]="item.url"
+      routerLinkActive="--active"
+      ariaCurrentWhenActive="page"
+    >
+      <app-icon class="SidebarNavItemIcon" [name]="item.icon"></app-icon>
+    </a>
+  </nav>
+</aside>

@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: coffeeclub_user
+      POSTGRES_PASSWORD: coffeeclub_password
+      POSTGRES_DB: coffeeclub
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    depends_on:
+      - postgres
+    build: .
+    environment:
+      DATABASE_URL: postgresql://coffeeclub_user:coffeeclub_password@postgres:5432/coffeeclub
+    ports:
+      - 80:80
+      - 443:80
+
+volumes:
+  pgdata:

@@ -1,0 +1,31 @@
+<div class="Order">
+  <div class="OrderHeader">
+    <h3 class="OrderTitle">Order</h3>
+    <div *ngIf="items.length" class="OrderReset" (click)="reset()">&#10005;</div>
+  </div>
+  <div class="OrderList">
+    <div *ngFor="let item of items" class="OrderListItem">
+      <img class="OrderListItemImage" [src]="categoriesMap[item.name].image" />
+      <div class="OrderListItemControl" (click)="decreaseOrderItem(item)">-</div>
+      <div class="OrderListItemCount">{{ item.count }}</div>
+      <div class="OrderListItemControl" (click)="increaseOrderItem(item)">+</div>
+      <div class="OrderListItemData">
+        <div class="OrderListItemName">{{ item.name }}</div>
+        <div class="OrderListItemSize">{{ item.size }}{{ categoriesMap[item.name].measure }}</div>
+      </div>
+      <div class="OrderListItemPrice">${{ (item.price * item.count).toFixed(2) }}</div>
+    </div>
+  </div>
+  <ng-container *ngIf="items.length; else placeholder">
+    <div class="OrderTotal">${{ totalSum.toFixed(2) }}</div>
+    <div class="OrderFooter">
+      <button class="Button" (click)="isPayment = true">Process order</button>
+    </div>
+  </ng-container>
+  <ng-template #placeholder>
+    <div class="OrderPlaceholder">No added items</div>
+  </ng-template>
+  <app-modal *ngIf="isPayment" headTitle="Payment" (onClose)="isPayment = false">
+    <app-payment (onSuccess)="handlePayment()"></app-payment>
+  </app-modal>
+</div>

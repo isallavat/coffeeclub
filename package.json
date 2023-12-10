@@ -1,12 +1,15 @@
 {
-  "name": "my-app",
+  "name": "coffeeclub",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run generate:svg-sprite && ng serve",
+    "build": "npm run generate:svg-sprite && ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "stylelint": "stylelint \"**/*.+(css|scss)\" --fix --ignore-path .gitignore",
+    "prettier": "prettier . --write --ignore-path .gitignore",
+    "generate:svg-sprite": "svg2sprite ./src/assets/icons ./src/app/components/svg/svg.component.svg --stripAttrs id --stripAttrs width --stripAttrs height --inline true --iconPrefix icon-"
   },
   "private": true,
   "dependencies": {
@@ -20,19 +23,27 @@
     "@angular/router": "^17.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.2"
+    "zone.js": "~0.14.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.6",
     "@angular/cli": "^17.0.6",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
+    "@types/uuid": "^9.0.7",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-order": "^6.0.3",
+    "svg2sprite-cli": "^2.0.1",
     "typescript": "~5.2.2"
   }
 }

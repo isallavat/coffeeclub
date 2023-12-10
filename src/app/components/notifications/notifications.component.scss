@@ -1,0 +1,142 @@
+@import '@/assets/scss/variables.scss';
+
+.Notifications {
+  bottom: 0;
+  left: 0;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px 10px;
+  position: fixed;
+  right: 0;
+  z-index: 100;
+
+  &:empty {
+    padding: 0;
+  }
+
+  &Item {
+    animation: notifications-item-bottom 300ms ease-out;
+    background-color: #fff;
+    border-left-style: solid;
+    border-left-width: 5px;
+    box-shadow: 0 5px 10px rgba(196, 200, 208, 0.4);
+    display: flex;
+    margin-top: 15px;
+    padding: 15px;
+
+    &_info {
+      border-color: $palette-blue;
+    }
+
+    &_success {
+      border-color: $palette-green;
+    }
+
+    &_warning {
+      border-color: $palette-orange;
+    }
+
+    &_error {
+      border-color: $palette-red;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &Image {
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: white;
+      height: 24px;
+      margin-right: 15px;
+      padding: 3px;
+      text-align: center;
+      width: 24px;
+
+      &_info {
+        background-color: $palette-blue;
+      }
+
+      &_success {
+        background-color: $palette-green;
+      }
+
+      &_warning {
+        background-color: $palette-orange;
+      }
+
+      &_error {
+        background-color: $palette-red;
+      }
+
+      &Icon {
+        height: 18px;
+        width: 18px;
+      }
+    }
+
+    &Data {
+      flex: 1;
+    }
+
+    &Close {
+      border-radius: 50%;
+      box-sizing: border-box;
+      cursor: pointer;
+      height: 20px;
+      margin: 2px 0 0 10px;
+      padding: 3px;
+      -webkit-tap-highlight-color: transparent;
+      text-align: center;
+      width: 20px;
+
+      &Icon {
+        height: 14px;
+        width: 14px;
+      }
+    }
+
+    &Title {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-top: 3px;
+    }
+
+    &Text {
+      font-size: 12px;
+      padding-top: 5px;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+
+  @media (min-width: $width-tablet) {
+    bottom: auto;
+    left: auto;
+    padding: 20px;
+    top: 0;
+    width: 380px;
+
+    &Item {
+      animation: notifications-item-right 300ms ease-out;
+    }
+  }
+
+  @keyframes notifications-item-bottom {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes notifications-item-right {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+}

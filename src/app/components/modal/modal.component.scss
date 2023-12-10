@@ -1,0 +1,43 @@
+@import '@/assets/scss/variables.scss';
+
+.Modal {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  position: fixed;
+  z-index: 5;
+
+  &Overlay {
+    background: rgba(#3a2d27, 0.85);
+    inset: 0;
+    position: absolute;
+  }
+
+  &Window {
+    background:#fff2f1;
+    border-radius: 10px;
+    max-width: 400px;
+    padding: 20px;
+    position: relative;
+    width: 100%;
+  }
+
+  &Header {
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  &Title {
+    flex: 1;
+    margin: 0;
+  }
+
+  &Close {
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 15px;
+    -webkit-tap-highlight-color: transparent;
+  }
+}

@@ -1,0 +1,31 @@
+<div class="Input">
+  <div class="InputContainer" *ngIf="type === 'area'">
+    <div class="InputElement InputElement_hidden" v-html="hiddenText"></div>
+    <textarea
+      class="InputElement InputElement_visible"
+      [name]="name"
+      [value]="value || ''"
+      [placeholder]="placeholder"
+      (focus)="handleFocus()"
+      (change)="handleInput($event)"
+    ></textarea>
+  </div>
+  <div class="InputContainer" #elseBlock>
+    <input
+      class="InputElement"
+      [type]="type === 'select' ? 'text' : type"
+      [readonly]="type === 'select'"
+      [name]="name"
+      [value]="value || ''"
+      [placeholder]="placeholder"
+      (focus)="handleFocus()"
+      (input)="handleInput($event)"
+    />
+  </div>
+  <app-icon *ngIf="type === 'select'" class="InputArrow" name="expand-down"></app-icon>
+  <div *ngIf="options && isMenuOpen" class="InputMenu">
+    <div *ngFor="let item of options" class="InputMenuItem" (click)="handleSelect(item.value)">
+      {{ item.label }}
+    </div>
+  </div>
+</div>

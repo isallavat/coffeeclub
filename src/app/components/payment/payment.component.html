@@ -1,0 +1,35 @@
+<div class="Payment">
+  <div class="PaymentTabs">
+    <div
+      *ngFor="let item of tabs"
+      class="PaymentTabsItem"
+      [ngClass]="{ '--active': activeTab === item.name }"
+      (click)="activeTab = item.name"
+    >
+      {{ item.label }}
+    </div>
+  </div>
+  <form class="Form" (submit)="handleSubmitForm($event)">
+    <div *ngIf="activeTab === 'cash'" class="FormRow">
+      <app-input class="FormInput" type="text" placeholder="Amount"></app-input>
+    </div>
+    <div *ngIf="activeTab === 'gift'" class="FormRow">
+      <app-input class="FormInput" type="text" placeholder="Card number"></app-input>
+    </div>
+    <div *ngIf="activeTab === 'card'">
+      <div class="FormRow">
+        <app-input class="FormInput" type="text" placeholder="Card number"></app-input>
+      </div>
+      <div class="FormRow">
+        <app-input class="FormInput2" type="text" placeholder="Card date"></app-input>
+        <app-input class="FormInput2" type="text" placeholder="CVC"></app-input>
+      </div>
+      <div class="FormRow">
+        <app-input class="FormInput" type="text" placeholder="Card holder name"></app-input>
+      </div>
+    </div>
+    <div class="FormFooter">
+      <button class="Button">Pay</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,67 @@
+@import '@/assets/scss/variables.scss';
+
+.Input {
+  border: 1px solid #fe6c6d;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+
+  &Container {
+    flex: 1;
+    position: relative;
+  }
+
+  &Element {
+    background: none;
+    border: none;
+    border-radius: 19px;
+    font: inherit;
+    font-size: 16px;
+    line-height: 1.3;
+    min-height: 38px;
+    padding: 7px 15px;
+    resize: none;
+    white-space: pre-wrap;
+    width: 100%;
+    word-break: break-word;
+
+    &_hidden {
+      visibility: hidden;
+    }
+
+    &_visible {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  &Menu {
+    background:#fff2f1;
+    border: 1px solid #fe6c6d;
+    border-radius: 20px;
+    left: -1px;
+    position: absolute;
+    right: -1px;
+    top: 100%;
+    z-index: 1;
+
+    &Item {
+      cursor: pointer;
+      padding: 10px 15px;
+      -webkit-tap-highlight-color: transparent;
+
+      &:hover {
+        background: rgba(#fe6c6d, 0.1);
+      }
+    }
+  }
+
+  &Arrow {
+    flex-shrink: 0;
+    height: 20px;
+    margin: 9px;
+    width: 20px;
+  }
+}

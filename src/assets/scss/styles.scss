@@ -1,0 +1,83 @@
+@import '@/assets/scss/variables.scss';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.3;
+  text-rendering: optimizelegibility;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  background: #f6f6f6;
+  color: #52575d;
+  font-size: 14px;
+  height: 100%;
+  margin: 0;
+  padding: 30px;
+}
+
+h1 {
+  font-size: 30px;
+  margin: 0 0 30px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 30px 0;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.Button {
+  background: #fe6c6d;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 40px;
+  min-width: 100px;
+  padding: 0 20px;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+
+.Form {
+  &Row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &Footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+  }
+
+  &Input {
+    flex: 1;
+  }
+
+  &Input2 {
+    width: 45%;
+  }
+}

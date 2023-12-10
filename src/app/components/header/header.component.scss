@@ -1,0 +1,37 @@
+@import '@/assets/scss/variables.scss';
+
+.Header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px 0;
+
+  &Time {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  &User {
+    align-items: center;
+    display: flex;
+    
+    &Name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &Out {
+      cursor: pointer;
+      margin-left: 15px;
+      -webkit-tap-highlight-color: transparent;
+
+      &Icon {
+        display: block;
+        height: 20px;
+        transform: rotate(180deg);
+        width: 20px;
+      }
+    }
+  }
+}

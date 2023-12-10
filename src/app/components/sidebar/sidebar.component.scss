@@ -1,0 +1,29 @@
+@import '@/assets/scss/variables.scss';
+
+.Sidebar {
+  padding: 90px 0 0 25px;
+
+  &Nav {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    
+    &Item {
+      border-radius: 10px;
+      display: flex;
+      margin: 10px 0;
+      padding: 10px;
+      -webkit-tap-highlight-color: transparent;
+      text-decoration: none;
+
+      &.--active {
+        background: #fff;
+      }
+
+      &Icon {
+        height: 30px;
+        width: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import '@/assets/scss/variables.scss';
+
+.Order {
+  &Header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  &Title {
+    flex: 1;
+    margin: 0;
+  }
+
+  &Reset {
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  &List {
+    &Item {
+      align-items: center;
+      display: flex;
+      
+      &Image {
+        flex-shrink: 0;
+        margin-right: 15px;
+        width: 70px;
+      }
+
+      &Control {
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 1;
+        -webkit-tap-highlight-color: transparent;
+        user-select: none;
+      }
+
+      &Count {
+        background: #000;
+        border-radius: 50%;
+        color: #fff;
+        flex-shrink: 0;
+        height: 30px;
+        margin: 0 15px;
+        padding: 6px 0;
+        text-align: center;
+        width: 30px;
+      }
+
+      &Data {
+        margin-left: auto;
+        text-align: right;
+      }
+
+      &Name {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      &Price {
+        color: #858383;
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 15px;
+      }
+    }
+  }
+
+  &Total {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  &Footer {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &Placeholder {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+  }
+}

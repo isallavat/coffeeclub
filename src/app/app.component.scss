@@ -1,0 +1,40 @@
+@import '@/assets/scss/variables.scss';
+
+.App {
+  align-items: stretch;
+  border-radius: 50px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  max-width: 1280px;
+
+  &Sidebar {
+    background: #fe6c6d;
+    border-radius: 50px;
+    color: #fff;
+    margin-right: -100px;
+    width: 200px;
+  }
+
+  &Main {
+    background:#fff2f1;
+    border-radius: 50px 0 0 50px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+
+  &Content {
+    flex: 1;
+    overflow: auto;
+    padding: 30px;
+  }
+
+  &Order {
+    background-color: #fff;
+    border-radius: 0 50px 50px 0;
+    padding: 40px 30px 30px;
+    width: 400px;
+  }
+}

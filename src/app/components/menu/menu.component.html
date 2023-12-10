@@ -1,0 +1,58 @@
+<div class="Menu">
+  <div class="MenuHeader">
+    <h1 class="MenuTitle">Menu</h1>
+    <button class="Button" (click)="isNewItem = true">Add</button>
+  </div>
+  <table *ngIf="items.length" class="MenuTable">
+    <thead>
+      <th>Name</th>
+      <th>Measure</th>
+      <th>Price</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.name }}</td>
+        <td>{{ item.size }}{{ categoriesMap[item.name].measure }}</td>
+        <td>${{ item.price }}</td>
+        <td><div class="MenuDelete" (click)="deleteItem(item.id)">&#10005;</div></td>
+      </tr>
+    </tbody>
+  </table>
+  <app-modal *ngIf="isNewItem" headTitle="New menu item" (onClose)="handleCloseForm()">
+    <form class="Form" (submit)="handleSubmitForm($event)">
+      <div class="FormRow">
+        <app-input
+          class="FormInput"
+          type="select"
+          name="name"
+          placeholder="Name"
+          [value]="formData.name"
+          [options]="categoryOptions"
+          (onInput)="handleInputChange($event)"
+        ></app-input>
+      </div>
+      <div class="FormRow">
+        <app-input
+          class="FormInput2"
+          type="text"
+          name="size"
+          placeholder="Measure"
+          [value]="formData.size"
+          (onInput)="handleInputChange($event)"
+        ></app-input>
+        <app-input
+          class="FormInput2"
+          type="text"
+          name="price"
+          placeholder="Price"
+          [value]="formData.price"
+          (onInput)="handleInputChange($event)"
+        ></app-input>
+      </div>
+      <div class="FormFooter">
+        <button class="Button" type="submit">Submit</button>
+      </div>
+    </form>
+  </app-modal>
+</div>

@@ -1,0 +1,12 @@
+<header class="Header">
+  <div class="HeaderTime">
+    <div>{{ date.month }} {{ date.day }}, {{ date.year }}</div>
+    <div>{{ date.hours }}:{{ date.minutes }}</div>
+  </div>
+  <div class="HeaderUser">
+    <div class="HeaderUserName">{{ user?.name }}</div>
+    <span class="HeaderUserOut" (click)="logout()">
+      <app-icon class="HeaderUserOutIcon" name="sign-out"></app-icon>
+    </span>
+  </div>
+</header>
