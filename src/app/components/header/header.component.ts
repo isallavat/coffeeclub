@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 import { IconComponent } from '@/app/components/icon/icon.component'
 import { UserService } from '@/app/services/user.service'
 
@@ -18,7 +19,10 @@ export class HeaderComponent {
     minutes: ''
   }
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   get user() {
     return this.userService.data
@@ -57,5 +61,6 @@ export class HeaderComponent {
 
   logout() {
     this.userService.logout()
+    this.router.navigate([''])
   }
 }

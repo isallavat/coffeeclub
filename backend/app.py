@@ -41,7 +41,7 @@ class RequestUserBody(BaseModel):
 cwd = os.getcwd()
 load_dotenv(os.path.join(cwd, '.env'))
 
-conn = psycopg2.connect(os.getenv('DATABASE_URL'))
+conn = psycopg2.connect(os.getenv('DATABASE_URI'))
 
 build_folder = os.path.join(cwd, 'dist', 'browser')
 

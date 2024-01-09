@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { RouterOutlet } from '@angular/router'
+import { RouterOutlet, Router } from '@angular/router'
 import { SidebarComponent } from '@/app/components/sidebar/sidebar.component'
 import { HeaderComponent } from '@/app/components/header/header.component'
 import { LoginComponent } from '@/app/components/login/login.component'
@@ -28,7 +28,10 @@ import { UserService } from '@/app/services/user.service'
 export class AppComponent {
   title = 'coffeeclub'
   isLoading = false
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   get user() {
     return this.userService.data
@@ -39,7 +42,12 @@ export class AppComponent {
 
     if (token) {
       this.isLoading = true
-      this.userService.init(token).finally(() => (this.isLoading = false))
+      this.userService
+        .init(token)
+        .then(() => {
+          this.router.navigate(['/dashboard'])
+        })
+        .finally(() => (this.isLoading = false))
     }
   }
 }

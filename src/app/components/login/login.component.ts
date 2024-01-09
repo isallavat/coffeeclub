@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { Router } from '@angular/router'
 import { InputComponent } from '@/app/components/input/input.component'
 import { ApiService } from '@/app/services/api.service'
 import { UserService } from '@/app/services/user.service'
@@ -15,7 +16,8 @@ export class LoginComponent {
   data: DynamicObject = {}
   constructor(
     private apiService: ApiService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   adminLogin() {
@@ -37,6 +39,7 @@ export class LoginComponent {
       localStorage.setItem('authToken', response.token)
       this.apiService.setAuthToken(response.token)
       this.userService.data = response
+      this.router.navigate(['/dashboard'])
     })
   }
 }

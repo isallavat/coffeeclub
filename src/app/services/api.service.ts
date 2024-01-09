@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core'
 import { TMenuItem, TOrder, TStaffItem, TUser } from '@/types'
 import { NotificationsService } from './notifications.service'
+import env from '@/env.json'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  private apiHost = 'http://localhost:30050'
+  private apiHost =
+    !env.apiHost || env.apiHost[0] === '/' ? window.location.origin + env.apiHost : env.apiHost
   private token = ''
 
   constructor(private notificationsService: NotificationsService) {}
